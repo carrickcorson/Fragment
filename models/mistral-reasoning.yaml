@@ -1,0 +1,9 @@
+name: mistral-reasoning
+backend: llama-cpp
+parameters:
+  model: mistral-7b-instruct-v0.2.Q4_K_M.gguf
+context_size: 2048
+threads: 4
+gpu_layers: 8
+stopwords:
+  - "</s>"

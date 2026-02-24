@@ -1,0 +1,9 @@
+name: deepseek-coder
+backend: llama-cpp
+parameters:
+  model: deepseek-coder-6.7b-instruct.Q4_K_M.gguf
+context_size: 2048
+threads: 4
+gpu_layers: 20
+stopwords:
+  - "<|EOT|>"

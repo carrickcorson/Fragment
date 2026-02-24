@@ -1,0 +1,10 @@
+name: phi3-general
+backend: llama-cpp
+parameters:
+  model: phi3-q4.gguf
+context_size: 2048
+threads: 4
+gpu_layers: 0
+stopwords:
+  - "<|im_end|>"
+  - "<|end|>"
