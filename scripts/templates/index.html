@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fragment</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Fragment AI UI">
+        <meta name="author" content="Carrick Corson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+            let messages = [];
+
+            function sendMessage(){
+                let input = document.getElementById("input");
+                let chatDiv = document.getElementById("chat");
+                let text = input.value;
+
+                messages.push({role: "user", content: text});
+
+                chatDiv.innerHTML += "<article>\n<b>You:\n</b> " + text + "</article>";
+
+                input.value = "";
+
+                fetch("/api/chat", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({messages: messages})
+                })
+                .then(res => res.json())
+                .then(data => {
+                    messages.push({role: "assistant", content: data.response});
+                    chatDiv.innerHTML += "<b>Fragment:\n</b> " + marked.parse(data.response);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("input").addEventListener("keydown", function(event) {
+                    if (event.key === "Enter" && !event.shiftKey) {
+                        event.preventDefault();
+                        sendMessage();
+                    }
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <h1>
+            Fragment
+        </h1>
+        <div id="chat"></div>
+        <form onsubmit="event.preventDefault(); sendMessage()">
+            <textarea id="input" placeholder="Ask away!"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        
+    </body>
+</html>
