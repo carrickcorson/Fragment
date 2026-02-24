@@ -1,0 +1,12 @@
+| PC Component   | Part                           | # | Install Date | Notes                                                  |
+| -------------- | ------------------------------ | - | ------------ | ------------------------------------------------------ |
+| CPU            | AMD Ryzen 5 3400G              |   | 2021         | Thermal Paste replaced in 2026                         |
+| GPU            | EVGA GTX970 SSC ACX 2.0+       |   | 2021         | Thermal Paste replaced in 2026                         |
+| PSU            | PQ850G                         |   | 2026         |                                                        |
+| Motherboard    | Gigabyte B450 I Aorus Pro Wifi |   | 2021         |                                                        |
+| CPU Cooler     | AMD Wraith Stealth             |   | 2021         |                                                        |
+| M.2 Card       | None                           |   | -            | First thing to buy when I can - Aiming for ~500GB      |
+| RAM            | 2x Ballistix Sport 8GB         |   | 2021         |                                                        |
+| SSD 1 [C:, D:] | KINGSTON SA400S37480G          |   | 2023         | OS, projects                                           |
+| SSD 2 [F:]     | KINGSTON SA400S37120G          |   | 2021         | Empty - future scratch drive for specific applications |
+| Case           | CH260                          |   | 2026         |                                                        |
