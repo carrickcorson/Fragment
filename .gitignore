@@ -2,3 +2,4 @@
 *.gguf
 /models/blobs
 /models/manifests
+/models/model_create_commands.txt

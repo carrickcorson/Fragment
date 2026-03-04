@@ -1,8 +1,23 @@
-from flask import Flask, request, jsonify, render_template
+from flask import (Flask,
+                   Response,
+                   request,
+                   jsonify,
+                   render_template,
+                   stream_with_context)
 from pipeline import Pipeline
+import json
+from collections.abc import Generator
 
 app = Flask(__name__)
 pipe = Pipeline()
+
+def generate(
+        messages: list
+    ) -> Generator[str, None, None]:
+    
+    for chunk in pipe.chat(messages):
+        yield f"data: {json.dumps({'chunk': chunk})}\n\n"
+    yield "data: [DONE]\n\n"
 
 @app.route("/")
 def index():
@@ -12,9 +27,8 @@ def index():
 def chat():
     data = request.get_json()
     messages = data["messages"]
-    response = pipe.chat(messages)
 
-    return jsonify({"response": response})
+    return Response(stream_with_context(generate(messages)), mimetype="text/event-stream")
 
 
 if __name__ == "__main__":

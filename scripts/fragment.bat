@@ -1,2 +1,2 @@
-./.venv/Scripts/activate.ps1
+call .\.venv\Scripts\activate
 py web_app.py
