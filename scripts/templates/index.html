@@ -1,25 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Fragment</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Fragment AI UI">
-        <meta name="author" content="Carrick Corson">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script defer src="{{ url_for('static', filename='chat.js') }}"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
+  <head>
+    <title>Fragment</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Fragment AI UI" />
+    <meta name="author" content="Carrick Corson" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="{{ url_for('static', filename='marked.min.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='chat.js') }}"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
 
-    <body>
-        <h1>
-            Fragment
-        </h1>
-        <div id="chat"></div>
-        <form onsubmit="event.preventDefault(); sendMessage()">
-            <textarea id="input" placeholder="Ask away!"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        
-    </body>
+  <body>
+    <h1>Fragment</h1>
+    <div id="chat"></div>
+    <form
+      onsubmit="
+        event.preventDefault();
+        sendMessage();
+      "
+    >
+      <textarea id="input" placeholder="Ask away!" autofocus></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </body>
 </html>

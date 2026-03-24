@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(cmd /c \"dir F:\\\\LocalAI\\\\llama.cpp\")"
+      "Bash(cmd /c \"dir F:\\\\LocalAI\\\\llama.cpp\")",
+      "WebSearch",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.ywian.com)"
     ]
   }
 }
