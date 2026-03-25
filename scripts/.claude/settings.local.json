@@ -5,7 +5,9 @@
       "Bash(cmd /c \"dir F:\\\\LocalAI\\\\llama.cpp\")",
       "WebSearch",
       "WebFetch(domain:medium.com)",
-      "WebFetch(domain:www.ywian.com)"
+      "WebFetch(domain:www.ywian.com)",
+      "WebFetch(domain:insiderllm.com)",
+      "WebFetch(domain:markaicode.com)"
     ]
   }
 }

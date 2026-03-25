@@ -29,26 +29,19 @@ class Pipeline:
             Model.GENERAL, url=url, max_tokens=2048, temperature=0.5
         )
 
-        self.model_reasoning = LocalLLM(
-            Model.REASONING, url=url, max_tokens=4096, temperature=0.3
-        )
-
         self.model_coding = LocalLLM(
-            Model.CODING, url=url, max_tokens=4096, temperature=0.2
+            Model.CODING, url=url, max_tokens=1024, temperature=0.2
         )
 
         self.turn_memory_limit = turn_memory_limit
 
     def _determine_model(self, recent_prompt: str) -> LocalLLM:
 
-        # if any(word.lower() in recent_prompt for word in Keywords.reasoning):
-        #     model = self.model_reasoning
-
         if any(word.lower() in recent_prompt for word in Keywords.coding):
             model = self.model_coding
 
         else:
-            model = self.model_reasoning
+            model = self.model_general
 
         return model
 
