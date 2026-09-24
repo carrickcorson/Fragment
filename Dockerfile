@@ -9,3 +9,6 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+WORKDIR /home/app-user/fragment/src/
+ENTRYPOINT ["uv", "run", "fastapi", "dev", "app.py"]

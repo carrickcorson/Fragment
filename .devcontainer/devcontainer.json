@@ -10,7 +10,19 @@
 	},
 
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/app-user/fragment/,type=bind,consistency=cached",
-	"workspaceFolder": "/home/app-user/fragment/"
+	"workspaceFolder": "/home/app-user/fragment/",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"usernamehw.errorlens",
+				"njpwerner.autodocstring",
+				"DavidAnson.vscode-markdownlint",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-containers"
+			]
+		}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
