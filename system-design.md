@@ -6,7 +6,7 @@ Development setup to allow running the LLM on Orpheus while developing the web a
 
 ### Server (Orpheus)
 
-Docker container runs Ollama with models. The model API port is exposed and accessed over the network via an environment variale. The model is stored on the server in a docker volume.
+Docker container runs Ollama with models. The model API port is exposed and accessed over the network via an environment variable. The model is stored on the server in a docker volume.
 
 Docker volume has port 11434 exposed
 

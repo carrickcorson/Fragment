@@ -1,0 +1,6 @@
+# VSCode Dev Container directory
+.devcontainer/
+
+# GIT files/directories
+.git
+.gitignore
