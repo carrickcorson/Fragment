@@ -9,8 +9,8 @@
 		"dockerfile": "../Dockerfile"
 	},
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/usr/local/app/,type=bind,consistency=cached",
-	"workspaceFolder": "/usr/local/app/"
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/app-user/fragment/,type=bind,consistency=cached",
+	"workspaceFolder": "/home/app-user/fragment/"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

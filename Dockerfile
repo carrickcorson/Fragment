@@ -1,5 +1,8 @@
 FROM python:3.14
-WORKDIR /usr/local/app
+RUN adduser app-user
+USER app-user
+
+WORKDIR /home/app-user/fragment/
 
 COPY requirements.txt ./
 RUN pip install --upgrade pip
