@@ -11,4 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 WORKDIR /home/app-user/fragment/src/
-ENTRYPOINT ["uv", "run", "fastapi", "dev", "app.py"]
+ENTRYPOINT ["uv", "run", "fastapi", "dev"]
+CMD ["app.py"]

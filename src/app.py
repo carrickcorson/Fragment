@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+fragment_app = FastAPI()
 
-@app.get("/")
+@fragment_app.get("/")
 async def main():
     return {"message": "Hellooooo"}
