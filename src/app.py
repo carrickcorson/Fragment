@@ -5,3 +5,8 @@ fragment_app = FastAPI()
 @fragment_app.get("/")
 async def main():
     return {"message": "Hellooooo"}
+
+
+@fragment_app.post("/chat")
+async def chat():
+    
